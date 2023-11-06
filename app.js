@@ -10,7 +10,7 @@ const p = document.createElement("p");
 let previousGuesses = [];
 let numGuesses = 1;
 let playGame = true;
-let remainingSeconds = 60;
+let remainingSeconds = 3600;
 
 document.querySelector("#remaining-time").innerHTML = remainingSeconds;
 
@@ -18,10 +18,6 @@ document.querySelector("#remaining-time").innerHTML = remainingSeconds;
 let timer = setInterval(updateRemainingTime, 1000);
 
 function updateRemainingTime() {
-  console.log(
-    "Me ejecuto cada segundo. Valor de remainingSeconds: ",
-    remainingSeconds
-  );
   // 1. Decremntar en 1 la variable de estado remainingSeconds
   remainingSeconds = remainingSeconds - 1;
 
@@ -75,8 +71,15 @@ function validateGuess(guess) {
 
 // ¿En que punto del código hay que invocar a esta función?
 async function sendScoreToServer() {
-  // TODO: CODE ME!!
+  // TODO: Establecer adecuadamente el valor de las propiedades elapsed_time y attempts
+  const score = {
+    machine: "",
+    elapsed_time: 0,
+    attempts: 0,
+  };
+  // TODO: CODE ME!! Haz el POST con la función fetch.
   console.log("Enviando los datos al servidor de King.com"); //POST
+  // Enviamos los datos al endpoint
 }
 
 function checkGuess(guess) {
@@ -85,6 +88,7 @@ function checkGuess(guess) {
     displayMessage(
       `You guessed correctly! You can check all the scores at <a href="https://03i74i.csb.app/">https://03i74i.csb.app/</a> (provided that the developer did the work!!)`
     );
+
     sendScoreToServer();
     endGame();
   } else if (guess < randomNumber) {
