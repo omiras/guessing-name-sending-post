@@ -31,3 +31,11 @@ Completa adecuadamente la función **sendScoreToServer** para enviar los datos d
 Piensa además, en que punto del código tienes que invocar a dicha función.
 
 Puedes ver si has enviado bien tus datos porque la API te responderá con un mensaje de éxito. Además, puedes ver si tu record se ha insertado en esta [Web](https://03i74i.csb.app/)
+
+## BONUS
+
+Existe un endpoint del cual puedes hacer un GET para obtener un array con las puntuaciones de todas los jugadores que han enviado puntuaciones a esta API.
+
+`https://guessing-name-score-api.onrender.com/add-score`
+
+Usalo para crear una table de puntuaciones actualizada en este mismo index.html, similiar a la Web de puntuaciones del apartado anterior
