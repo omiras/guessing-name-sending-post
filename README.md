@@ -36,6 +36,6 @@ Puedes ver si has enviado bien tus datos porque la API te responderá con un men
 
 Existe un endpoint del cual puedes hacer un GET para obtener un array con las puntuaciones de todas los jugadores que han enviado puntuaciones a esta API.
 
-`https://guessing-name-score-api.onrender.com/add-score`
+`https://guessing-name-score-api.onrender.com/get-scores`
 
 Usalo para crear una table de puntuaciones actualizada en este mismo index.html, similiar a la Web de puntuaciones del apartado anterior
