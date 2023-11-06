@@ -12,7 +12,7 @@ Les gustaría recibir 3 datos:
 
 King.com nos ofrece un endpoint para enviar peticiones de tipo POST. Esta es la URL:
 
-`https://omiras-reimagined-rotary-phone-rpgp96g5x7fx55x-3000.preview.app.github.dev/score`
+`https://guessing-name-score-api.onrender.com/add-score`
 
 Nos comentan que este es el objeto serializado en JSON que tenemos que enviar:
 
