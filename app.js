@@ -78,14 +78,14 @@ async function sendScoreToServer() {
   // TODO: Establecer adecuadamente el valor de las propiedades elapsed_time y attempts
   const score = {
     machine: "Oscar",
-    elapsed_time: 60-remainingSeconds,
+    elapsed_time: 60 - remainingSeconds,
     attempts: 4,
   };
   // TODO: CODE ME!!
   console.log("Enviando los datos al servidor de King.com"); //POST
   // Enviamos los datos al endpoint https://singulars2023.free.beeceptor.com
   const response = await fetch(
-    "https://omiras-reimagined-rotary-phone-rpgp96g5x7fx55x-3000.preview.app.github.dev/score",
+    "https://guessing-name-score-api.onrender.com/add-score",
     {
       // especificamos que queremos hacer un POST
       method: "POST",
@@ -109,7 +109,7 @@ function checkGuess(guess) {
     displayMessage(
       `You guessed correctly! You can check all the scores at <a href="https://03i74i.csb.app/">https://03i74i.csb.app/</a> (provided that the developer did the work!!)`
     );
-    
+
     sendScoreToServer();
     endGame();
   } else if (guess < randomNumber) {
