@@ -8,6 +8,8 @@ Les gustaría recibir 3 datos:
 2. El número de intentos que ha necesitado
 3. El nombre de la maquina des de donde se envia la puntuación (podríamos pensarlo como un nombre de usuario)
 
+[Demo](https://omiras.github.io/guessing-name-sending-post/)
+
 ## Arquitectura
 
 King.com nos ofrece un endpoint para enviar peticiones de tipo POST. Esta es la URL:
