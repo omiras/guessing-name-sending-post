@@ -10,7 +10,7 @@ const p = document.createElement("p");
 let previousGuesses = [];
 let numGuesses = 1;
 let playGame = true;
-let remainingSeconds = 60;
+let remainingSeconds = 3600;
 
 document.querySelector("#remaining-time").innerHTML = remainingSeconds;
 
@@ -77,9 +77,9 @@ function validateGuess(guess) {
 async function sendScoreToServer() {
   // TODO: Establecer adecuadamente el valor de las propiedades elapsed_time y attempts
   const score = {
-    machine: "Oscar",
-    elapsed_time: 60 - remainingSeconds,
-    attempts: 4,
+    machine: "Baby Reindeer",
+    elapsed_time: 3600 - remainingSeconds,
+    attempts: numGuesses,
   };
   // TODO: CODE ME!!
   console.log("Enviando los datos al servidor de King.com"); //POST
@@ -159,7 +159,7 @@ function newGame() {
 
     // actualizar la variable remainingSeconds a 60
     // volver a lanzar el setInterval
-    remainingSeconds = 60;
+    remainingSeconds = 3600;
     timer = setInterval(updateRemainingTime, 1000);
   });
 }
