@@ -1,5 +1,6 @@
 //Generate a random number between 1 and 500
 let randomNumber = parseInt(Math.random() * 100 + 1);
+console.log(randomNumber);
 const submit = document.querySelector("#subt");
 const userInput = document.querySelector("#guessField");
 const guessSlot = document.querySelector(".guesses");
@@ -80,18 +81,26 @@ async function sendScoreToServer() {
 
     // TODO: CODE ME!! Haz el POST con la función fetch.
     console.log("Enviando los datos al servidor de King.com"); //POST
+    
+    
     // Enviamos los datos al endpoint
-  const response = await fetch('https://guessing-name-score-api.onrender.com/add-score', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify( score )
-  })
-  const data = await response.json();
-  console.log('bla');
-  console.log(data);
-
+    async function sendData() {
+      let response = await fetch(
+        "https://guessing-name-score-api.onrender.com/add-score",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify(score),
+        }
+      );
+  
+      let data = await response.json();
+  
+      console.log(data);
+    }
+    sendData();
 }
 
 function checkGuess(guess) {
