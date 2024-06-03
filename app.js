@@ -9,7 +9,7 @@ const startOver = document.querySelector(".resultParas");
 const lowOrHi = document.querySelector(".lowOrHi");
 const p = document.createElement("p");
 let previousGuesses = [];
-let numGuesses = 1;
+let numGuesses = 0;
 let playGame = true;
 let remainingSeconds = 3600;
 
@@ -74,14 +74,14 @@ function validateGuess(guess) {
 async function sendScoreToServer() {
   // TODO: Establecer adecuadamente el valor de las propiedades elapsed_time y attempts
   const score = {
-    machine: "Magic Mike",
+    machine: "V M",
     elapsed_time: 3600 - remainingSeconds,
     attempts: numGuesses,
   };
 
     // TODO: CODE ME!! Haz el POST con la función fetch.
     console.log("Enviando los datos al servidor de King.com"); //POST
-    
+    console.log('score from Post: ', score)
     
     // Enviamos los datos al endpoint
     async function sendData() {
@@ -100,7 +100,25 @@ async function sendScoreToServer() {
   
       console.log(data);
     }
+
+    async function getData() {
+      let response = await fetch(
+        "https://guessing-name-score-api.onrender.com/get-scores"
+      );
+  
+      let data = await response.json();
+  
+      data.forEach((d) => {
+        const result = document.createElement("tr");
+        result.innerHTML = `<th>${d.machine}</th>
+        <th>${d.attempts}</th>
+        <th>${d.elapsed_time}</th>`;
+        document.querySelector(".table").appendChild(result);
+      });
+    }
+
     sendData();
+    getData();
 }
 
 function checkGuess(guess) {

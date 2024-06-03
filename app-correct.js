@@ -74,7 +74,7 @@ function validateGuess(guess) {
 async function sendScoreToServer() {
   // TODO: Establecer adecuadamente el valor de las propiedades elapsed_time y attempts
   const score = {
-    machine: "Kevin",
+    machine: "V M",
     elapsed_time: 3600 - remainingSeconds,
     attempts: 11 - numGuesses,
   };
